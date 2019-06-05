@@ -1,0 +1,19 @@
+{
+  "name": "stayout",
+  "version": "1.0.0",
+  "description": "make your stay away from home more productive",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chiazokam/stayout.git"
+  },
+  "author": "zokky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chiazokam/stayout/issues"
+  },
+  "homepage": "https://github.com/Chiazokam/stayout#readme"
+}
