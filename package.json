@@ -4,7 +4,11 @@
   "description": "make your stay away from home more productive",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate:undo": "sequelize db:migrate:undo:all",
+    "migrate": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all",
+    "run:db": "npm run migrate:undo && npm run migrate && npm run seed"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/Chiazokam/stayout/issues"
   },
-  "homepage": "https://github.com/Chiazokam/stayout#readme"
+  "homepage": "https://github.com/Chiazokam/stayout#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.8.7"
+  }
 }
