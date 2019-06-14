@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import swaggerUi from 'swagger-ui-express';
+import docs from './docs.json';
 import router from './server/routes';
 
 
@@ -13,6 +15,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(docs));
 
 app.use('/api/v1', router);
 

@@ -1,0 +1,31 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Stayout.com",
+    "description" : "To give you an extra productivity outside your home and office hours",
+    "version" : "0.1"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:5000"
+  } ],
+  "paths" : {
+    "/api/v1/default" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}
