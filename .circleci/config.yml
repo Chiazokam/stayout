@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    environment:
+      COVERALLS_REPO_TOKEN: kGqHmNvDC4m20Ub9D53XgWv63ZEAasI22
+    docker:
+      - image: circleci/node:8
+    working_directory: ~/app
+    steps:
+      - checkout
+      - restore_cache: 
+          key: dependency-cache-v2-{{ checksum "package.json" }}
+      - run:
+          name: Install Dependencies
+          command: |
+            npm ci
+      - save_cache: 
+          key: dependency-cache-v2-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run:
+          name: Run Test and Coverage
+          command: |
+            npm test
+            npm run coveralls
