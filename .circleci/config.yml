@@ -24,3 +24,4 @@ jobs:
           command: |
             npm test
             npm run coveralls
+            

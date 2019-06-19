@@ -6,12 +6,17 @@
   "scripts": {
     "pretester": "cross-env NODE_ENV=test npm run migrate:undo && cross-env NODE_ENV=test npm run migrate && cross-env NODE_ENV=test npm run seed",
     "test": "cross-env NODE_ENV=test nyc mocha --exit --require @babel/register --timeout 600000 ./server/__tests__/*.spec.js",
+    "ci:test": "cross-env NODE_ENV=test nyc mocha --runInBand --exit --require @babel/register --timeout 600000 ./server/__tests__/*.spec.js --detectOpenHandles --forceExit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "start:dev": "cross-env NODE_ENV=development nodemon --exec babel-node app.js",
     "migrate:undo": "sequelize db:migrate:undo:all",
     "migrate": "sequelize db:migrate",
     "seed": "sequelize db:seed:all",
-    "run:db": "npm run migrate:undo && npm run migrate && npm run seed"
+    "run:db": "npm run migrate:undo && npm run migrate && npm run seed",
+    "build": "npm run remove:build && babel app.js -d build && babel server -d build/server",
+    "remove:build": "rm -rf ./build",
+    "start": "node build/app.js",
+    "heroku-postbuild": "npm run build && npm run run:db"
   },
   "repository": {
     "type": "git",
@@ -36,7 +41,9 @@
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.8.7",
-    "swagger-ui-express": "^4.0.6"
+    "sequelize-cli": "^5.5.0",
+    "swagger-ui-express": "^4.0.6",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@babel/node": "^7.4.5",
