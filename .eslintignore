@@ -1,5 +1,5 @@
 /node_modules/**
 /.env/**
 .eslintrc
-/server/migrations
-/server/models
+/server/database/migrations
+/server/database/models

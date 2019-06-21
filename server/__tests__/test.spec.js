@@ -10,7 +10,7 @@ describe('Test if tests run', () => {
   it('it should get the default route', async () => {
     const res = await chai
       .request(app)
-      .get(`${baseUrl}/default`);
+      .get('/default');
     expect(res.status).to.equal(200);
     expect(res.body.message).to.equal('Welcome to Stayout.com');
   });

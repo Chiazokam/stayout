@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Booking.associate = (models) => {
     Booking.belongsTo(models.User, {
-      as: 'made_by',  // To rename the foreign key
+      as: 'made_by', // To rename the foreign key
       onDelete: 'CASCADE'
     });
     Booking.belongsTo(models.Space, {
