@@ -6,7 +6,6 @@
   "scripts": {
     "pretest": "cross-env NODE_ENV=test npm run migrate:undo && cross-env NODE_ENV=test npm run migrate && cross-env NODE_ENV=test npm run seed",
     "test": "cross-env NODE_ENV=test nyc mocha --exit --require @babel/register --timeout 600000 ./server/__tests__/*.spec.js",
-    "ci:test": "cross-env NODE_ENV=test nyc mocha --runInBand --exit --require @babel/register --timeout 600000 ./server/__tests__/*.spec.js --detectOpenHandles --forceExit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "start:dev": "cross-env NODE_ENV=development nodemon --exec babel-node app.js",
     "migrate:undo": "sequelize db:migrate:undo:all",
@@ -32,6 +31,7 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",

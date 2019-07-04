@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(apiDocs));
 
-app.use('/', router);
+app.use('/api/v1', router);
 
 app.listen(process.env.PORT || 5000, () => {
   // eslint-disable-next-line no-console
