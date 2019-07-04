@@ -68,7 +68,9 @@ Run tests with the command:
 
 The APIs are hosted on heroku at:
 
-* [Stayout APIs]()
+* [Stayout APIs](https://stayout-development.herokuapp.com/api/v1)
+
+* [Documentation](https://documenter.getpostman.com/view/4451044/SVSBwCin?version=latest)
 
 ## Built With
 

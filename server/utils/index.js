@@ -7,6 +7,7 @@ import {
   areParamTypesValid
 } from './auth-validators.utils';
 import capitalize from './capitalize.utils';
+import generateToken from './jwt-sign.utils';
 
 export {
   Response,
@@ -15,5 +16,6 @@ export {
   isEmailValid,
   isPasswordStrong,
   areParamTypesValid,
-  capitalize
+  capitalize,
+  generateToken,
 };
