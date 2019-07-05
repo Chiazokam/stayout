@@ -106,7 +106,7 @@ describe('User Sign Up Validations', () => {
         password: 'day'
       });
     expect(res.status).to.equal(400);
-    expect(res.body.errors.password).to.equal('Password is not strong enough');
+    expect(res.body.errors.password).to.equal('Password must be alphanumeric');
   });
 
   it('should not signup with wrong email type', async () => {

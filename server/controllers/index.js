@@ -1,3 +1,3 @@
-import signup from './auth.controllers';
+import { signup, signin } from './auth.controllers';
 
-export default signup;
+export { signup, signin };

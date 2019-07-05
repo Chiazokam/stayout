@@ -1,14 +1,19 @@
 import express from 'express';
-import signup from '../controllers';
+import { signup, signin } from '../controllers';
 import {
-  doUserParamsExist,
+  doSignupParamsExist,
   isEmailValid,
   isPasswordStrong,
-  areParamTypesValid
+  areSignupInputsString,
+  areSigninInputsString,
+  isSigninEmailValid,
+  doesSigninInputExist,
 } from '../utils';
 
 const router = express.Router();
 
-router.post('/signup', [areParamTypesValid, isEmailValid, isPasswordStrong, doUserParamsExist], signup);
+router.post('/signup', [areSignupInputsString, isEmailValid, isPasswordStrong, doSignupParamsExist], signup);
+router.post('/signin', [areSigninInputsString, isSigninEmailValid, doesSigninInputExist], signin);
+
 
 export default router;

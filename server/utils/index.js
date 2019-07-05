@@ -1,21 +1,28 @@
 import Response from './response.utils';
-import passwordHash from './password.utils';
+import { passwordHash, isPasswordValid } from './password.utils';
 import {
-  doUserParamsExist,
+  doSignupParamsExist,
   isEmailValid,
   isPasswordStrong,
-  areParamTypesValid
-} from './auth-validators.utils';
+  areSignupInputsString
+} from './signup-validators.utils';
 import capitalize from './capitalize.utils';
 import generateToken from './jwt-sign.utils';
+import {
+  areSigninInputsString, isSigninEmailValid, doesSigninInputExist
+} from './signin-validators.utils';
 
 export {
   Response,
   passwordHash,
-  doUserParamsExist,
+  doSignupParamsExist,
   isEmailValid,
   isPasswordStrong,
-  areParamTypesValid,
+  areSignupInputsString,
   capitalize,
   generateToken,
+  areSigninInputsString,
+  isSigninEmailValid,
+  doesSigninInputExist,
+  isPasswordValid
 };
