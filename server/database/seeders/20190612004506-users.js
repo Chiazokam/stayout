@@ -20,9 +20,9 @@ module.exports = {
     },
     {
       id: '88e98c51-14c1-4fb8-8748-3935940d5189',
-      username: 'Audu',
-      email: 'audu@audu.com',
-      password: '$2b$10$C3aNsfGAfHEmE6HfON1sq.v57Oqj09fhrPdF4QwvrCGFoXq1j.VWa'
+      username: 'mother',
+      email: 'mother@mother.com',
+      password: '$2b$10$UD6rdW/gyI9yvvYknvfeD.pLI9hsg41aq0mPegZ0HQPZ3MQ1EyOOa'
     }], {}),
 
   down: (queryInterface, Sequelize) => queryInterface.bulkDelete('Users', null, {})

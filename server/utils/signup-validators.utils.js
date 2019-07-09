@@ -8,7 +8,7 @@ import { doParamsExist, checkParamsType } from './common-validators.utils';
  * @param {any} next
  * @returns {any} next
  */
-const doUserParamsExist = (req, res, next) => {
+const doSignupParamsExist = (req, res, next) => {
   const { username, email } = req.body;
   doParamsExist(
     { username, email },
@@ -62,7 +62,7 @@ const isPasswordStrong = (req, res, next) => {
       return Response({
         res,
         code: '400',
-        data: { password: 'Password is not strong enough' }
+        data: { password: 'Password must be alphanumeric' }
       });
   }
 };
@@ -74,7 +74,7 @@ const isPasswordStrong = (req, res, next) => {
  * @param {any} next
  * @returns {any} next
  */
-const areParamTypesValid = (req, res, next) => {
+const areSignupInputsString = (req, res, next) => {
   const { email, username, password } = req.body;
   checkParamsType(
     { email, username, password },
@@ -84,8 +84,8 @@ const areParamTypesValid = (req, res, next) => {
 };
 
 export {
-  doUserParamsExist,
+  doSignupParamsExist,
   isEmailValid,
   isPasswordStrong,
-  areParamTypesValid
+  areSignupInputsString
 };

@@ -5,13 +5,14 @@ import Response from './response.utils';
 import capitalize from './capitalize.utils';
 
 /**
- * description Check if parameter provided already exists in the database
+ * @description Check if parameter provided already exists in the database
  * @param {object} param
  * @param {string} model
  * @param {object} res
  * @param {any} next
  * @returns {any} next
  */
+/* istanbul ignore next */
 const doParamsExist = async (param, model, res, next) => {
   const paramKey = Object.keys(param);
   const paramValue = Object.values(param);
@@ -63,4 +64,53 @@ const checkParamsType = (param, res, next) => {
   return next();
 };
 
-export { doParamsExist, checkParamsType };
+/**
+ * @description Check if parameter provided already exists in the database
+ * @param {object} param
+ * @param {object} paramObject
+ * @returns {any} next
+ */
+const doesUserExist = async (param, paramObject) => {
+  const {
+    model, req, res, next
+  } = paramObject;
+  const paramKey = Object.keys(param);
+  const paramValue = Object.values(param);
+  const errors = {};
+  let paramExists;
+  let user;
+
+  for (const key of paramKey) {
+    for (const value of paramValue) {
+      paramExists = await db[model].findOne({
+        where: { [key]: value.trim() },
+      });
+
+      if (!paramExists) {
+        errors[key] = 'Invalid login credentials';
+      } else {
+        const {
+          id, username, email, isAdmin, password
+        } = paramExists.dataValues;
+        user = {
+          id,
+          username,
+          email,
+          password,
+          isAdmin
+        };
+      }
+    }
+  }
+  if (Object.keys(errors).length !== 0) {
+    return Response({
+      res,
+      code: '400',
+      data: errors
+    });
+  }
+  req.user = user;
+  return next();
+};
+
+export { doParamsExist, checkParamsType, doesUserExist };

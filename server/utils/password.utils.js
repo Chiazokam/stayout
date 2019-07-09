@@ -6,4 +6,13 @@ import bcrypt from 'bcrypt';
  * @returns {string} hash
  */
 const passwordHash = password => bcrypt.hash(password, 10);
-export default passwordHash;
+
+/**
+ * @description - Check if Password is correct
+ * @param {string} password
+ * @param {string} hash
+ * @returns {boolean} any
+ */
+const isPasswordValid = (password, hash) => bcrypt.compareSync(password, hash);
+
+export { passwordHash, isPasswordValid };

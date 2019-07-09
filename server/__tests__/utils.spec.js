@@ -1,7 +1,7 @@
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../app';
-import { capitalize, generateToken, verifyToken } from '../utils';
+import { capitalize, generateToken } from '../utils';
 import baseUrl from './utils/baseUrl.utils';
 
 chai.use(chaiHttp);
@@ -31,7 +31,8 @@ describe('Test capitalize function', () => {
 describe('Token Tests', () => {
   it('should generate a token for a user', async () => {
     const token = await generateToken({
-      id: '88e98c51-14c1-4fb8-8748-3935940d5189'
+      id: '88e98c51-14c1-4fb8-8748-3935940d5189',
+      isAdmin: false
     }, '30d');
     expect(token).to.be.a('string');
   });
