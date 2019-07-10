@@ -11,6 +11,8 @@ import generateToken from './jwt-sign.utils';
 import {
   areSigninInputsString, isSigninEmailValid, doesSigninInputExist
 } from './signin-validators.utils';
+import sendMail from './email.utils';
+import baseTemplate from './email-template.utils';
 
 export {
   Response,
@@ -24,5 +26,7 @@ export {
   areSigninInputsString,
   isSigninEmailValid,
   doesSigninInputExist,
-  isPasswordValid
+  isPasswordValid,
+  sendMail,
+  baseTemplate
 };

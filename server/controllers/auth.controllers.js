@@ -3,8 +3,11 @@ import {
   Response,
   passwordHash,
   generateToken,
-  isPasswordValid
+  isPasswordValid,
+  sendMail,
+  baseTemplate,
 } from '../utils';
+import authConstants from '../constants';
 
 const { User } = db;
 
@@ -29,6 +32,8 @@ const signup = async (req, res) => {
     password: hash
   });
   const token = await generateToken({ id, isAdmin }, '30d');
+  const { subject, message } = authConstants;
+  sendMail(email, subject, baseTemplate(`Hi ${username}`, message));
   return Response({
     res,
     code: '201',

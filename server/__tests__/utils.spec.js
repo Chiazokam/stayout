@@ -1,8 +1,9 @@
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../app';
-import { capitalize, generateToken } from '../utils';
+import { capitalize, generateToken, sendMail } from '../utils';
 import baseUrl from './utils/baseUrl.utils';
+import mock from './utils/mock';
 
 chai.use(chaiHttp);
 
@@ -35,5 +36,27 @@ describe('Token Tests', () => {
       isAdmin: false
     }, '30d');
     expect(token).to.be.a('string');
+  });
+});
+
+describe('Email Tests', () => {
+  it('should successfully send email', async () => {
+    const response = await sendMail(
+      mock.signup.email,
+      `Hi ${mock.signup.username}`,
+      '<h1>Welcome to Stayout</h1>'
+    );
+    expect(response.accepted).to.be.an('array');
+    expect(response.accepted[0]).to.equal(mock.signup.email);
+  });
+
+  it('should fail to send email', async () => {
+    const response = await sendMail(
+      'aaa',
+      `Hi ${mock.signup.username}`,
+      '<h1>Welcome to Stayout</h1>'
+    );
+    expect(response.status).to.equal('failure');
+    expect(response.message).to.equal('No recipients defined');
   });
 });
