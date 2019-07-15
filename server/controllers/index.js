@@ -1,3 +1,9 @@
-import { signup, signin } from './auth.controllers';
+import AuthControllers from './auth.controllers';
 
-export { signup, signin };
+const {
+  signin, signup, forgotPassword, resetPassword
+} = AuthControllers;
+
+export {
+  signup, signin, forgotPassword, resetPassword
+};
