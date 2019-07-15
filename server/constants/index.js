@@ -1,3 +1,3 @@
-import authConstants from './auth.constants';
+import { authConstants, forgotPasswordMessage, forgotPasswordSubject } from './auth.constants';
 
-export default authConstants;
+export { authConstants, forgotPasswordMessage, forgotPasswordSubject };

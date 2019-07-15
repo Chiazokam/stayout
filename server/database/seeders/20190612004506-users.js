@@ -14,9 +14,9 @@ module.exports = {
     },
     {
       id: '8cd0680f-b510-4b06-ac7b-d77fa241dde7',
-      username: 'Maxwell',
-      email: 'maxwell@maxwell.com',
-      password: '$2b$10$C3aNsfGAfHEmE6HfON1sq.v57Oqj09fhrPdF4QwvrCGFoXq1j.VWa'
+      username: 'Mcdonald',
+      email: 'mcdonald@mcdonald.com',
+      password: '$2b$10$anMkCiGALO2EKp.mppOIOOPyLaYh7D7iAjIMcDVF8WFK2CqEcDFda'
     },
     {
       id: '88e98c51-14c1-4fb8-8748-3935940d5189',

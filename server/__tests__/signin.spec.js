@@ -28,7 +28,7 @@ describe('User Sign In', () => {
         email: 'holly@holly.com',
       });
     expect(res.status).to.equal(400);
-    expect(res.body.errors.email).to.equal('Invalid login credentials');
+    expect(res.body.errors.email).to.equal('Invalid credentials');
   });
 
   it('should not signin a non-existing username', async () => {
@@ -40,7 +40,7 @@ describe('User Sign In', () => {
         password: 'Mother2019'
       });
     expect(res.status).to.equal(400);
-    expect(res.body.errors.username).to.equal('Invalid login credentials');
+    expect(res.body.errors.username).to.equal('Invalid credentials');
   });
 
   it('should not signin with wrong password', async () => {
@@ -52,7 +52,7 @@ describe('User Sign In', () => {
         password: 'Father2019'
       });
     expect(res.status).to.equal(400);
-    expect(res.body.errors.password).to.equal('Invalid login credentials');
+    expect(res.body.errors.password).to.equal('Invalid credentials');
   });
 });
 

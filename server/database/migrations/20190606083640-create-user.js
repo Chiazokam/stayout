@@ -22,6 +22,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      istokenreset: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
       isAdmin: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,

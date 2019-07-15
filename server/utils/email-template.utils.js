@@ -88,10 +88,10 @@ const baseTemplate = (emailTitle, message) => `<!DOCTYPE html>
                     <tbody>
                       <tr style="background-color: #371E1A; color:#F5F6FA">
                         <td valign="top" align="center"> <span style="font-family: -apple-system,BlinkMacSystemFont,sans-serif; color:#9EB0C9; font-size:10px;" height:30px>&copy;
-                            <a href="#" target="_blank" style="color:#9EB0C9; text-decoration:none;">Stayout.com</a>
+                            <a href="#" target="_blank" style="color:#FFFFFF; text-decoration:none;">Stayout.com</a>
                             &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="#" target="_self" style="color:#9EB0C9; text-decoration:none;">&copy; 2019 </a>
-                            &nbsp; &nbsp; &nbsp; <a href="#" style="color:#9EB0C9; text-decoration: none;">click to unsuscribe for this message</a>
+                            <a href="#" target="_self" style="color:#FFFFFF; text-decoration:none;">&copy; 2019 </a>
+                            &nbsp; &nbsp; &nbsp; <a href="#" style="color:#FFFFFF; text-decoration: none;">click to unsuscribe for this message</a>
                           </span>
                         </td>
                       </tr>
