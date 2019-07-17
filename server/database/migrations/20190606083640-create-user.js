@@ -22,6 +22,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      social: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       istokenreset: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
