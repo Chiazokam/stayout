@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    social: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     istokenreset: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
