@@ -32,8 +32,8 @@ class SocialControllers {
 
     const email = emails[0].value;
     const names = displayName.split(' ');
-    const username = `${names[0]}_${id}`;
-    const hash = await passwordHash(username);
+    const username = names[0];
+    const hash = await passwordHash(`${username}${id}`);
 
     const [user] = await User.findOrCreate({
       where: { email },

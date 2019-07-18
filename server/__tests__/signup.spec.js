@@ -31,19 +31,6 @@ describe('User Sign Up', () => {
     expect(res.status).to.equal(409);
     expect(res.body.errors.email).to.equal('Email already exists');
   });
-
-  it('should not signup a user with the same username', async () => {
-    const res = await chai
-      .request(app)
-      .post(`${baseUrl}/auth/signup`)
-      .send({
-        ...mock.signup,
-        email: 'newdemo@demo.com',
-        password: 'NewMockPassword19'
-      });
-    expect(res.status).to.equal(409);
-    expect(res.body.errors.username).to.equal('Username already exists');
-  });
 });
 
 describe('User Sign Up Validations', () => {

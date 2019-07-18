@@ -5,16 +5,16 @@ const { doParamsExist, checkParamsType } = CommonValidators;
 
 class SignupValidators {
   /**
- * description - Check if email and username exist in database
+ * description - Check if email exists in database
  * @param {object} req
  * @param {object} res
  * @param {any} next
  * @returns {any} next
  */
   static async doSignupParamsExist(req, res, next) {
-    const { username, email } = req.body;
+    const { email } = req.body;
     doParamsExist(
-      { username, email },
+      { email },
       'User',
       res,
       next
